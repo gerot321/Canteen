@@ -24,6 +24,7 @@ public class SignIn extends AppCompatActivity {
 
     Button btnSignIn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,7 @@ public class SignIn extends AppCompatActivity {
                             if (user.getPassword().equals(etPassword.getText().toString())) {
 
                                 Intent intent = new Intent(SignIn.this, Home.class);
+                                intent.putExtra("phoneId",etPhone.getText().toString() );
                                 Common.currentUser = user;
                                 startActivity(intent);
                                 finish();

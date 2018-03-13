@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity
     DatabaseReference category;
 
     TextView txtFullName;
-
+    String ID;
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
 
@@ -44,7 +44,7 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         toolbar.setTitle("Brand");
-
+        ID= getIntent().getStringExtra("phoneId");
         setSupportActionBar(toolbar);
 
         // Init firebase
@@ -160,7 +160,9 @@ public class Home extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.nav_Confirmation) {
-
+            Intent intent = new Intent(Home.this, Confirmation.class);
+            intent.putExtra("userID", ID );
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

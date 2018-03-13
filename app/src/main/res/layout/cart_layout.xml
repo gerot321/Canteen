@@ -12,7 +12,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -47,9 +47,9 @@
 
         <ImageView
             android:id="@+id/cart_item_count"
-            android:layout_width="20dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical|end"
+            android:layout_gravity="center_horizontal|end"
             android:layout_marginTop="16dp" />
 
 
