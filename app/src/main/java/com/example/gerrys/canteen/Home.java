@@ -160,7 +160,7 @@ public class Home extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.nav_Confirmation) {
-            Intent intent = new Intent(Home.this, Confirmation.class);
+            Intent intent = new Intent(Home.this, ConfirmationSection.class);
             intent.putExtra("userID", ID );
             startActivity(intent);
         }

@@ -25,7 +25,7 @@
         <activity android:name=".ShoeDetail" />
         <activity android:name=".Cart" />
         <activity android:name=".Checkout" />
-        <activity android:name=".Confirmation" />
+        <activity android:name=".ConfirmationSection" />
         <activity android:name=".OrderStatus"></activity>
     </application>
 

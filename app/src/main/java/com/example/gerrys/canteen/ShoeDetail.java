@@ -74,7 +74,6 @@ public class ShoeDetail extends AppCompatActivity {
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppbar);
 
-        // Get shoe id from intent
         if (getIntent() != null)
             productId = getIntent().getStringExtra("ShoeId");
         if (!productId.isEmpty()){
@@ -111,4 +110,52 @@ public class ShoeDetail extends AppCompatActivity {
             }
         });
     }
+    /*private void showAlertDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Cart.this);
+        alertDialog.setTitle("One last step!");
+        alertDialog.setMessage("Enter your shipping address: ");
+
+        final EditText edtAddress = new EditText(Cart.this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        );
+
+        edtAddress.setLayoutParams(lp);
+        alertDialog.setView(edtAddress); // Add edit text to alert dialog
+        alertDialog.setIcon(R.drawable.ic_add_shopping_cart_black_24dp);
+
+        alertDialog.setPositiveButton("GO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Create new request
+                Request request = new Request(
+                        Common.currentUser.getPhone(),
+                        Common.currentUser.getName(),
+                        edtAddress.getText().toString(),
+                        txtTotalPrice.getText().toString(),
+                        cart
+                );
+
+                // Submit to Firebase
+                requests.child(String.valueOf(System.currentTimeMillis()))
+                        .setValue(request);
+
+                //Clear cart
+                new Database(getBaseContext()).clearCart();
+                Toast.makeText(Cart.this, "Thank you, your order has been placed", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+        alertDialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        alertDialog.show();
+    }
+    */
 }
